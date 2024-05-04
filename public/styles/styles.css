@@ -18,9 +18,23 @@
 }
 
 /* Estilos de la navegación */
+.navegacion{
+    height: 50px;
+    background: #000000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navegacion div{
+    display: flex;
+    align-items: center;
+
+}
+
 .navegacion ul{
     padding: 5px;
-    background: #000000;
+    /* background: #000000; */
     display: flex;
     justify-content: center;
     align-items: center;

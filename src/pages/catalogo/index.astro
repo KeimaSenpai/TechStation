@@ -20,12 +20,12 @@ const post = await Astro.glob('./post/*.md')
         {
             post.map(post => {
                 return <div class="inicial">
-                    <a href={post.url}>
+                    <a class="contenido" href={post.url}>
                         <img src={post.frontmatter.picApp} alt={post.frontmatter.titleApp}>
                         <div class="info">
                             <a href={post.url}>{post.frontmatter.titleApp}</a>
-                            <p>{post.frontmatter.pesoApp}</p>
                         </div>
+                        <p>{post.frontmatter.pesoApp}</p>
                     </a>
 
                 </div>
@@ -44,7 +44,7 @@ const post = await Astro.glob('./post/*.md')
     }
     .app_list{
         display: flex;
-        margin: 20px;
+        margin: 15px 32px;
         align-items: center;
         gap: 5px;
     }
@@ -58,8 +58,8 @@ const post = await Astro.glob('./post/*.md')
         padding: 20px;
     }
     .inicial{
-        height: 220px;
-        width: 220px;
+        height: 200px;
+        width: 170px;
         display: grid;
         justify-content: center;
         justify-items: start;
@@ -67,7 +67,19 @@ const post = await Astro.glob('./post/*.md')
         align-content: center;
     }
     div img{
-        height: 150px;
+        height: 120px;
         border-radius: 25px;
+    }
+
+    .info{
+        display: block;
+        height: 25px;
+        width: 120px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        position: relative;
+    }
+    .info a{
+        position: absolute;
     }
 </style>

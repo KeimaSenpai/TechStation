@@ -5,9 +5,10 @@ import { ViewTransitions } from 'astro:transitions'
 interface Props {
     pageTitle?: string
     pageDescription?: string
+    pageImg?: string
 }
 
-const {pageTitle, pageDescription} = Astro.props
+const {pageTitle, pageDescription, pageImg} = Astro.props
 ---
 
 <!DOCTYPE html>
@@ -19,11 +20,24 @@ const {pageTitle, pageDescription} = Astro.props
     <link rel="shortcut icon" href="./img/icon.webp" type="icon.webp">
     <meta name="description" content={pageDescription}>
     <title>TechStation | {pageTitle}</title>
+    <!-- OPEN GRAPH -->
+    <meta property="og:image" content={pageImg} />
+    <meta
+        property="og:title"
+        content={pageTitle}
+    />
+    <meta
+        property="og:description"
+        content={pageDescription}
+    />
     <ViewTransitions/>
 </head>
 <nav class="navegacion">
-    <ul>
+    <div>
         <img class="logo" src='img/icon.webp' height="40" alt="logo">
+        <p>TechStation</p>
+    </div>
+    <ul>
         <li><a href="/">Home</a></li>
         <li><a href="servicios">Servicios</a></li>
         <li><a href="catalogo">Catálogo</a></li>
