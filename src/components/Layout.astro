@@ -4,11 +4,12 @@ import { ViewTransitions } from 'astro:transitions'
 
 interface Props {
     pageTitle?: string
+    pageTitleA?: string
     pageDescription?: string
     pageImg?: string
 }
 
-const {pageTitle, pageDescription, pageImg} = Astro.props
+const {pageTitle, pageTitleA, pageDescription, pageImg} = Astro.props
 ---
 
 <!DOCTYPE html>
@@ -24,7 +25,7 @@ const {pageTitle, pageDescription, pageImg} = Astro.props
     <meta property="og:image" content={pageImg} />
     <meta
         property="og:title"
-        content={pageTitle}
+        content={pageTitleA}
     />
     <meta
         property="og:description"
