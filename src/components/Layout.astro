@@ -1,0 +1,36 @@
+---
+import { ViewTransitions } from 'astro:transitions'
+
+
+interface Props {
+    pageTitle?: string
+    pageDescription?: string
+}
+
+const {pageTitle, pageDescription} = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/styles/styles.css">
+    <link rel="shortcut icon" href="./img/icon.webp" type="icon.webp">
+    <meta name="description" content={pageDescription}>
+    <title>TechStation | {pageTitle}</title>
+    <ViewTransitions/>
+</head>
+<nav class="navegacion">
+    <ul>
+        <img class="logo" src='img/icon.webp' height="40" alt="logo">
+        <li><a href="/">Home</a></li>
+        <li><a href="servicios">Servicios</a></li>
+        <li><a href="catalogo">Catálogo</a></li>
+        <li><a href="/">Acerca de</a></li>
+    </ul>
+</nav>
+<body>
+    <slot/>
+</body>
+</html>
